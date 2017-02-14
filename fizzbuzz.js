@@ -1,29 +1,33 @@
 var avow = require('avow');
+var output;
 
 function FizzBuzz(n) {
-var output = '';
+// output is empty string
+output = '';
 
+    // Loops 'n' times
     for (var i = 1; i <= n; i++) {
         if (i % 5 !== 0  && i % 3 !== 0) {
-            // console.log('.');
-            // console.log(`${i} is divisible by neither 3 nor 5`)
-            output = output + '.';
+            // i is divisible by neither 3 nor 5
+            output += '.';
         } else  if (i % 3 === 0 && i % 5 !== 0) {
-            // console.log('Fizz');
-            // console.log(`${i} is divisible by 3 but not 5`)
-            output = output + 'Fizz';
+            // i is divisible by 3 but not 5
+            output += 'Fizz';
         } else if (i % 3 !== 0 && i % 5 === 0) {
-            // console.log('Buzz');
-            // console.log(`${i} is divisible by 5 but not 3`)
-            output = output + 'Buzz';
+            // i is divisible by 5 but not 3
+            output += 'Buzz';
         } else if (i % 3 === 0 && i % 5 === 0) {
-            // console.log('Fizzbuzz')
-            // console.log(`${i} is divisible by both 3 and 5`)
-            output = output + 'FizzBuzz';
+            // i is divisible by both 3 and 5
+            output += 'FizzBuzz';
         }
+
     }
 
-    // console.log(output); 
+    // Checks to see if input is a string
+    if (typeof n === "string") {
+        output = 'You must enter a number';
+    }
+
     return output;  
 
 }
